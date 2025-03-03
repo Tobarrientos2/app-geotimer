@@ -1,0 +1,25 @@
+{
+  "appId": "com.geotimer.app",
+  "appName": "GeoTimer",
+  "webDir": "dist",
+  "plugins": {
+    "Geolocation": {
+      "ios": {
+        "alwaysPermission": "Necesitamos tu ubicación para avisarte cuando llegues a tu destino"
+      }
+    },
+    "LocalNotifications": {
+      "smallIcon": "ic_stat_icon",
+      "iconColor": "#2563EB"
+    },
+    "LiveUpdates": {
+      "appId": "TU_APP_ID_DE_APPFLOW",
+      "channel": "Production",
+      "autoUpdateMethod": "background",
+      "maxVersions": 2
+    }
+  },
+  "server": {
+    "cleartext": true
+  }
+}
