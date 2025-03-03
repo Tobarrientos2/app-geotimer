@@ -1,9 +1,9 @@
-import { LiveUpdate } from '@capacitor/live-updates';
+import { CapacitorLiveUpdates } from '@capacitor/live-updates';
 
 // Función para verificar actualizaciones
 export async function checkForUpdate() {
   try {
-    const update = await LiveUpdate.checkForUpdate();
+    const update = await CapacitorLiveUpdates.checkForUpdate();
     
     if (update.available) {
       console.log('¡Hay una actualización disponible!');
@@ -24,7 +24,7 @@ export async function downloadAndInstall() {
     console.log('Iniciando descarga de actualización...');
     
     // Iniciar la descarga
-    const download = await LiveUpdate.downloadUpdate((progress) => {
+    const download = await CapacitorLiveUpdates.downloadUpdate((progress) => {
       console.log(`Progreso de descarga: ${progress.percent}%`);
     });
     
@@ -32,7 +32,7 @@ export async function downloadAndInstall() {
       console.log('Descarga completada, instalando actualización...');
       
       // Instalar la actualización
-      await LiveUpdate.installUpdate();
+      await CapacitorLiveUpdates.installUpdate();
       console.log('Actualización instalada correctamente');
       return true;
     } else {
@@ -48,7 +48,7 @@ export async function downloadAndInstall() {
 // Función para recargar la aplicación
 export async function reloadApp() {
   try {
-    await LiveUpdate.reloadApp();
+    await CapacitorLiveUpdates.reloadApp();
     return true;
   } catch (error) {
     console.error('Error al recargar la aplicación:', error);
