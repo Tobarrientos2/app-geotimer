@@ -15,7 +15,7 @@ export default defineConfig({
         '@capacitor/core',
         '@capacitor/geolocation',
         '@capacitor/local-notifications',
-        '@capacitor/live-updates'
+        '@capgo/capacitor-updater'
       ]
     }
   },

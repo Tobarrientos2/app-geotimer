@@ -1,11 +1,11 @@
-import { CapacitorLiveUpdates } from '@capacitor/live-updates';
+import { CapacitorUpdater } from '@capgo/capacitor-updater';
 
 // Función para verificar actualizaciones
 export async function checkForUpdate() {
   try {
-    const update = await CapacitorLiveUpdates.checkForUpdate();
+    const result = await CapacitorUpdater.checkForUpdate();
     
-    if (update.available) {
+    if (result.update) {
       console.log('¡Hay una actualización disponible!');
       return true;
     } else {
@@ -23,20 +23,32 @@ export async function downloadAndInstall() {
   try {
     console.log('Iniciando descarga de actualización...');
     
-    // Iniciar la descarga
-    const download = await CapacitorLiveUpdates.downloadUpdate((progress) => {
-      console.log(`Progreso de descarga: ${progress.percent}%`);
+    // Configurar listener para el progreso de descarga
+    const downloadListener = CapacitorUpdater.addListener('download', (info) => {
+      console.log(`Progreso de descarga: ${info.percent}%`);
     });
     
-    if (download.consistent) {
+    // Descargar e instalar la actualización
+    const result = await CapacitorUpdater.download({
+      url: 'https://github.com/Tobarrientos2/app-geotimer/archive/refs/heads/main.zip',
+      version: 'latest'
+    });
+    
+    // Remover el listener
+    downloadListener.remove();
+    
+    if (result.status === 'success') {
       console.log('Descarga completada, instalando actualización...');
       
       // Instalar la actualización
-      await CapacitorLiveUpdates.installUpdate();
+      await CapacitorUpdater.set({
+        id: result.bundle.id
+      });
+      
       console.log('Actualización instalada correctamente');
       return true;
     } else {
-      console.error('La descarga no es consistente');
+      console.error('La descarga no fue exitosa');
       return false;
     }
   } catch (error) {
@@ -48,7 +60,7 @@ export async function downloadAndInstall() {
 // Función para recargar la aplicación
 export async function reloadApp() {
   try {
-    await CapacitorLiveUpdates.reloadApp();
+    await CapacitorUpdater.reload();
     return true;
   } catch (error) {
     console.error('Error al recargar la aplicación:', error);

@@ -19,8 +19,8 @@
     "@capacitor/core": "^7.0.1",
     "@capacitor/geolocation": "^7.1.1",
     "@capacitor/ios": "^7.0.1",
-    "@capacitor/live-updates": "^0.0.1",
     "@capacitor/local-notifications": "^7.0.0",
-    "cordova-plugin-ionic": "5.5.3"
+    "@capgo/capacitor-updater": "^5.3.33",
+    "cordova-plugin-ionic": "^5.5.3"
   }
 }

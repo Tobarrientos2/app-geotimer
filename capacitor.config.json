@@ -12,11 +12,10 @@
       "smallIcon": "ic_stat_icon",
       "iconColor": "#2563EB"
     },
-    "LiveUpdates": {
+    "CapacitorUpdater": {
       "appId": "0703ce37",
       "channel": "Production",
-      "autoUpdateMethod": "background",
-      "maxVersions": 2
+      "autoUpdate": true
     }
   },
   "server": {
