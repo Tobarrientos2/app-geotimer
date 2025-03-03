@@ -1,6 +1,8 @@
 {
   "name": "GeoTimer",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "custom",
   "id": "0703ce37"
 }

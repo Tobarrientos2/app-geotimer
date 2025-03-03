@@ -5,19 +5,28 @@ PODS:
   - CapacitorGeolocation (7.1.1):
     - Capacitor
     - IONGeolocationLib (~> 1.0)
+  - CapacitorLiveUpdates (0.0.1):
+    - Capacitor
+    - IonicLiveUpdates (~> 0.2)
   - CapacitorLocalNotifications (7.0.0):
     - Capacitor
+  - CordovaPlugins (7.0.1):
+    - CapacitorCordova
   - IONGeolocationLib (1.0.0)
+  - IonicLiveUpdates (0.5.6)
 
 DEPENDENCIES:
   - "Capacitor (from `../../node_modules/@capacitor/ios`)"
   - "CapacitorCordova (from `../../node_modules/@capacitor/ios`)"
   - "CapacitorGeolocation (from `../../node_modules/@capacitor/geolocation`)"
+  - "CapacitorLiveUpdates (from `../../node_modules/@capacitor/live-updates`)"
   - "CapacitorLocalNotifications (from `../../node_modules/@capacitor/local-notifications`)"
+  - CordovaPlugins (from `../capacitor-cordova-ios-plugins`)
 
 SPEC REPOS:
   trunk:
     - IONGeolocationLib
+    - IonicLiveUpdates
 
 EXTERNAL SOURCES:
   Capacitor:
@@ -26,16 +35,23 @@ EXTERNAL SOURCES:
     :path: "../../node_modules/@capacitor/ios"
   CapacitorGeolocation:
     :path: "../../node_modules/@capacitor/geolocation"
+  CapacitorLiveUpdates:
+    :path: "../../node_modules/@capacitor/live-updates"
   CapacitorLocalNotifications:
     :path: "../../node_modules/@capacitor/local-notifications"
+  CordovaPlugins:
+    :path: "../capacitor-cordova-ios-plugins"
 
 SPEC CHECKSUMS:
   Capacitor: 23fff43571a4d1e3ee7d67b5a3588c6e757c2913
   CapacitorCordova: 63d476958d5022d76f197031e8b7ea3519988c64
   CapacitorGeolocation: 8f8ac02ceaeb203a4762f8dc4ff5119e3f7fa50a
+  CapacitorLiveUpdates: 0a44a00b5f45d2388247edb5ed73c00e1f615150
   CapacitorLocalNotifications: 1270d26b56181ce081ccfab078b888c2f43d0fd0
+  CordovaPlugins: 335ffabd59838f774e3f5aa244ab9ac013b84542
   IONGeolocationLib: 81f33f88d025846946de2cf63b0c7628e7c6bc9d
+  IonicLiveUpdates: fbc64a7e9ce18a25b992200ec80ce37d5e6eb5aa
 
-PODFILE CHECKSUM: 19c0ed6828e4da5056b79a1622fcef758634a727
+PODFILE CHECKSUM: c153351a7a60180eae9c2d2f0a8dbd32f600bc0c
 
 COCOAPODS: 1.16.2

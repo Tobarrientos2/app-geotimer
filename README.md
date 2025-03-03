@@ -1,8 +1,8 @@
-# GeoTimer - Alarma de Destino
+# Svelte + Vite
 
-Una aplicación iOS desarrollada con Capacitor y Svelte que funciona como una alarma-timer que suena al llegar a un destino geográfico específico.
+This template should help get you started developing with Svelte in Vite.
 
-## Características
+## Recommended IDE Setup
 
 - Obtiene tu ubicación actual mediante GPS
 - Permite buscar destinos usando OpenStreetMap
