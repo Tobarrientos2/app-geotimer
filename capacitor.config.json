@@ -13,7 +13,7 @@
       "iconColor": "#2563EB"
     },
     "LiveUpdates": {
-      "appId": "TU_APP_ID_DE_APPFLOW",
+      "appId": "0703ce37",
       "channel": "Production",
       "autoUpdateMethod": "background",
       "maxVersions": 2
